@@ -1,7 +1,22 @@
 const orm = require('../config/orm');
 
-const burger = {
-    //create the code that will call the ORM functions using burger specific input for the ORM.
-}
+//call the ORM functions using burger specific input for the ORM.
 
-module.exports = { burger };
+let burger = {
+   
+    selectAll: async function(){
+        res = await orm.selectAll();
+        return res;
+    },
+    
+    updateOne: async function(){
+        res = await orm.updateOne(id);
+        return res;
+    },
+
+    insertOne: async function(){
+        res = await orm.insertOne(burger_name);
+    }
+};
+
+module.exports = burger;
