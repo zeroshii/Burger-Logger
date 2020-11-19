@@ -13,3 +13,5 @@ db.connect(function(err) {
     }
     console.log('Connected to the MySQL server.');
   });
+
+  module.exports = db;
