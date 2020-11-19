@@ -4,7 +4,7 @@ function selectAll(){
     return db.query(`SELECT * FROM burgers`);
 }
 
-function insertOne(burgerName){
+function insertOne(burger_name){
     return db.query(`INSERT INTO burgers (burger_name, devoured) VALUES ("${burgerName}", false)`);
 }
 
