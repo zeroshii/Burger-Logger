@@ -4,12 +4,12 @@ function selectAll(){
     return db.query(`SELECT * FROM burgers`);
 }
 
-function insertOne(){
-    return db.query(`INSERT INTO burgers (burger_name) VALUES (?)`);
+function insertOne(burgerName){
+    return db.query(`INSERT INTO burgers (burger_name, devoured) VALUES ("${burgerName}", false)`);
 }
 
-function updateOne(){
-    return db.query(`UPDATE burgers SET devoured = ? WHERE id = ?`);
+function updateOne(id){
+    return db.query(`UPDATE burgers SET devoured = 1 WHERE id = ${id}`);
 }
 
 module.exports = { selectAll, insertOne, updateOne };
