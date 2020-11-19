@@ -5,7 +5,7 @@ function selectAll(){
 }
 
 function insertOne(burger_name){
-    return db.query(`INSERT INTO burgers (burger_name, devoured) VALUES ("${burgerName}", false)`);
+    return db.query(`INSERT INTO burgers (burger_name, devoured) VALUES ("${burger_name}", false)`);
 }
 
 function updateOne(id){
