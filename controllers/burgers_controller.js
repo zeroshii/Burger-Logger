@@ -6,22 +6,21 @@ const router = express.Router();
 
 // show all burgers
 router.get("/", async function(req, res) {  
-    const data = await burger.selectAll();  
+    const data = await burger.listBurgers();  
     res.render("index", data);
 });
 
-// new burger
+// add burger
 router.post("/api/burgers",async function(req,res){
     const name = req.body.burger_name;
-    const data = await burger.insertOne(name);
+    const data = await burger.addBurger(name);
     res.send(data);
 });
 
-// update burger
+// change burger status to devoured
 router.put("/api/burgers/:id", async function(req,res){
     const burgerID = req.params.id;
-    const isDevoured = req.body.devoured;
-    const data = await burger.updateOne(burgerID, isDevoured);
+    const data = await burger.devourBurger(burgerID);
     res.json(data);
 });
 

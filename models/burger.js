@@ -4,18 +4,19 @@ const orm = require('../config/orm');
 
 let burger = {
    
-    selectAll: async function(){
-        res = await orm.selectAll();
-        return res;
+    listBurgers: async function(){
+        result = await orm.selectAll();
+        return result;
     },
     
-    updateOne: async function(){
-        res = await orm.updateOne(id);
-        return res;
+    devourBurger: async function(){
+        result = await orm.updateOne(id);
+        return result;
     },
 
-    insertOne: async function(){
-        res = await orm.insertOne(burger_name);
+    addBurger: async function(){
+        result = await orm.insertOne(burger_name);
+        return result;
     }
 };
 
