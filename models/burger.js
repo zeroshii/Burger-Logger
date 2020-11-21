@@ -9,13 +9,13 @@ let burger = {
         return result;
     },
     
-    devourBurger: async function(burgerId){
-        result = await orm.devourBurger(burgerId);
+    devourBurger: async function(id){
+        result = await orm.devourBurger(id);
         return result;
     },
 
-    addBurger: async function(data){
-        const burgerName = data.burger_name;
+    addBurger: async function(burger_name){
+        const burgerName = burger_name.burger_name;
         result = await orm.addBurger(burgerName);
         return result;
     }

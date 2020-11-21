@@ -10,7 +10,7 @@ let orm = {
         return db.query(`INSERT INTO burgers (burger_name, devoured) VALUES ("${burger_name}", false)`);
     },
     
-    devourBurger (id){
+    devourBurger(id){
         return db.query(`UPDATE burgers SET devoured = 1 WHERE id = ${id}`);
     }
 } 

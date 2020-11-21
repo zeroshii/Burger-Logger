@@ -16,15 +16,16 @@ router.get("/", async function(req, res) {
 
 // add burger
 router.post("/api/burgers",async function(req,res){
-    const name = req.body.burger_name;
-    const data = await burger.addBurger(name);
-    res.send(data);
+    const data = await burger.addBurger({
+        burger_name: req.body.burger_name
+    });
+    res.json(data);
 });
 
 // change burger status to devoured
 router.put("/api/burgers/:id", async function(req,res){
-    const burgerID = req.params.id;
-    const data = await burger.devourBurger(burgerID);
+    const id = req.body.id;
+    const data = await burger.devourBurger(id);
     res.json(data);
 });
 
