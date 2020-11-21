@@ -6,15 +6,13 @@ const router = express.Router();
 
 // show all burgers
 router.get("/", async function(req, res) {  
-    const data = await burger.listBurgers(); 
+    const data = await burger.listBurgers() 
     let hbsObject = {
         burgers: data
     } 
-    console.log(hbsObject);
+    console.log(data);
     res.render("index", hbsObject);
 });
-
-
 
 // add burger
 router.post("/api/burgers",async function(req,res){
