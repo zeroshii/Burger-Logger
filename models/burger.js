@@ -5,17 +5,18 @@ const orm = require('../config/orm');
 let burger = {
    
     listBurgers: async function(){
-        result = await orm.listBurgers();
+        let result = await orm.listBurgers();
+        console.log('In burger js...')
         return result;
     },
     
     devourBurger: async function(id){
-        result = await orm.devourBurger(id);
+        let result = await orm.devourBurger(id);
         return result;
     },
 
-    addBurger: async function(burger_name){
-        const burgerName = burger_name.burger_name;
+    addBurger: async function(data){
+        let burgerName = data.burger_name;
         result = await orm.addBurger(burgerName);
         return result;
     }

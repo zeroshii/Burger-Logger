@@ -3,6 +3,7 @@ const db = require('./connection.js');
 let orm = {
 
     listBurgers (){
+        console.log("in orm listBurgers...")
         return db.query(`SELECT * FROM burgers`);
     },
     
@@ -14,6 +15,5 @@ let orm = {
         return db.query(`UPDATE burgers SET devoured = 1 WHERE id = ${id}`);
     }
 } 
-
 
 module.exports = orm;
