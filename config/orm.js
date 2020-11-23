@@ -14,6 +14,6 @@ let orm = {
     devourBurger(id){
         return db.query(`UPDATE burgers SET devoured = 1 WHERE id = ${id}`);
     }
-} 
+} ;
 
 module.exports = orm;
