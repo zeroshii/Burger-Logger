@@ -16,12 +16,9 @@ const mysql = require('mysql');
 //   });
 class Database {
   constructor( config ) {
-    if (process.env.JAWSDB_URL){
-      this.connection = connection = mysql.createConnection(process.env.JAWSDB_URL);
-    } else {
-      this.connection = mysql.createConnection( config );
-    }
-  }
+    this.connection = mysql.createConnection( 
+        process.env.JAWSDB_URL ? process.env.JAWSDB_URL : config );
+}
   query( sql, args=[] ) {
       return new Promise( ( resolve, reject ) => {
           this.connection.query( sql, args, ( err, rows ) => {
