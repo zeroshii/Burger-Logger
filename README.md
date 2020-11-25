@@ -7,6 +7,8 @@ Eat-Da-Burger! is a restaurant app that lets user input the names of burgers the
 
 The deployed application on Heroku: [Eat-Da-Burger!](https://salty-shore-20884.herokuapp.com/)
 
+![screenshot](https://github.com/zeroshii/Burger-Logger/blob/main/public/screenshot.jpg)
+
 ## Technologies
 
 * MySQL
